@@ -1,0 +1,7 @@
+library(e1071)
+library(readr)
+setwd("E:/ITD")
+forecast <- read_csv("E:/ITD/forecast.csv")
+linearMod <- lm(X7~clouds+hour, data=forecast)
+a <- data.frame(clouds = 70,hour = 2)
+nb <- naiveBayes(X7~clouds+hour, data=forecast)
